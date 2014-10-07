@@ -9,7 +9,7 @@ namespace ClientA
 		static void Main(string[] args)
 		{
 			var queueName = "ClientA." + Guid.NewGuid();
-			Console.WriteLine("G'day mate! The bloody queue name to kick off the bus is: {0}", queueName);
+			Console.WriteLine("G'day mate! The queue name to for the bus is: {0}", queueName);
 			
 			try
 			{
@@ -19,13 +19,11 @@ namespace ClientA
 					sbc.ReceiveFrom(string.Format("rabbitmq://localhost/{0}", queueName));
 					sbc.Subscribe(subs => subs.Handler<Common.ClientMessage>(msg => Console.WriteLine(msg.Text)));
 				});
-
-				Console.WriteLine("Aight mate! We're now BALLS DEEP in the bus.");
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex);
-				Console.WriteLine("Arrrrgh! You fkd up.");
+				Console.WriteLine("Arrrrgh! You made a doozy!");
 			}
 
 			Console.Read();
