@@ -1,5 +1,4 @@
-﻿using System.Threading;
-
+﻿
 namespace PublisherA
 {
 	using System;
@@ -11,26 +10,25 @@ namespace PublisherA
 		static void Main(string[] args)
 		{
 			Console.WriteLine("This is the Publisher A");
+
+			var numberOfMessages = ClientMessage.DefaultQuantity; 
+
+			if (args.Length > 0)
+			{
+				var parsed = int.TryParse(args[0], out numberOfMessages);
+				if (!parsed) numberOfMessages = ClientMessage.DefaultQuantity; 
+			}
+
 			Bus.Initialize(sbc =>
 			{
 				sbc.UseRabbitMq();
 				sbc.ReceiveFrom("rabbitmq://localhost/publisher_a");
 			});
 
-			var thread = new Thread(new ThreadStart(
-				delegate
-				{
-					while (true)
-					{
-						Bus.Instance.Publish(new ClientMessage {Text = "ClientA." + Guid.NewGuid()});
-					}
-				}));
-
-			thread.Start();
-			
-			Console.ReadKey();
-
-			thread.Abort();
+			for (var i = 0; i < numberOfMessages; i++)
+			{
+				Bus.Instance.Publish(new ClientMessage { Text = "ClientA." + Guid.NewGuid() });
+			}
 
 			Bus.Shutdown();
 		}

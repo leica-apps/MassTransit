@@ -28,7 +28,7 @@ namespace MassTransit.Transports.RabbitMq.Tests
 
 			ConfigureEndpointFactory(x => { x.UseRabbitMq(); });
 		}
-
+		
 		protected Uri LocalErrorUri { get; private set; }
 
 		protected override void ConfigureServiceBus(Uri uri, ServiceBusConfigurator configurator)
