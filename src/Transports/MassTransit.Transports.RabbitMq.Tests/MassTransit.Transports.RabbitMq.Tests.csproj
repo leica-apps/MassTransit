@@ -179,6 +179,33 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RoutingHarness\MassTransit.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\packages\Magnum.2.1.3\lib\NET40\Magnum.dll">
+      <Link>RoutingHarness\Magnum.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\packages\Magnum.2.1.3\lib\NET40\Magnum.xml">
+      <Link>RoutingHarness\Magnum.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\packages\Newtonsoft.Json.6.0.6\lib\net40\Newtonsoft.Json.dll">
+      <Link>RoutingHarness\Newtonsoft.Json.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\packages\Newtonsoft.Json.6.0.6\lib\net40\Newtonsoft.Json.xml">
+      <Link>RoutingHarness\Newtonsoft.Json.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\packages\RabbitMQ.Client.3.4.0\lib\net35\RabbitMQ.Client.dll">
+      <Link>RoutingHarness\RabbitMQ.Client.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\packages\RabbitMQ.Client.3.4.0\lib\net35\RabbitMQ.Client.xml">
+      <Link>RoutingHarness\RabbitMQ.Client.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="client.p12">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -194,34 +221,13 @@
     <Content Include="RoutingHarness\Common.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="RoutingHarness\Magnum.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="RoutingHarness\Magnum.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="RoutingHarness\MassTransit.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="RoutingHarness\MassTransit.Transports.RabbitMq.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="RoutingHarness\Newtonsoft.Json.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="RoutingHarness\Newtonsoft.Json.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RoutingHarness\PublisherA.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RoutingHarness\PublisherB.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="RoutingHarness\RabbitMQ.Client.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="RoutingHarness\RabbitMQ.Client.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RoutingHarness\Stact.dll">
